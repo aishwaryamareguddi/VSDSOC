@@ -74,6 +74,75 @@ OpenLane is a comprehensive, open-source toolchain designed for the automated de
 #### openLANE ASIC Design Flow:
 ![WhatsApp Image 2024-05-20 at 23 41 07_f923b0ed](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/8c762480-8975-4f6d-a7cc-fc02db927261)
 
+## openLANE preparation process
+#### Open your terminal and enter the following commands:
+1. Navigate to the OpenLane docker directory:
+   ```
+   cd Desktop/work/tools/openlane_working_dir/openlane/docker
+   ```
+2. Start the interactive OpenLane flow:
+   ```
+   flow.tcl -interactive
+   ```
+
+ ![VirtualBox_vsdworkshop_20_05_2024_12_10_23](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/ce704ffa-db7b-430b-bc36-b3b8d3372472)
+ 
+
+3. Now that the OpenLane tool is launched and ready, the next step is to load the necessary package. This is done by entering the command `package require openlane`.
+
+   ![VirtualBox_vsdworkshop_21_05_2024_00_22_28](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/eadf5568-eaf8-4f88-998c-b5c693e3fb8d)
+
+4.We will be designing the PicoRV32a CPU. This stage involves setting up the design by merging two LEF files: the cell-level LEF and the technology-level LEF.
+
+To start this process, use the following command:
+```
+prep -design picorv32a
+```
+
+![VirtualBox_vsdworkshop_21_05_2024_00_28_46](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/5d4a79c7-a008-461d-a283-8ea9906d9929)
+
+5.Now, open a new terminal and navigate to the `picorv32a` directory, which contains the `runs` folder. Inside the `runs` directory, you will find a folder named with the date of creation (for example, `20-05_18-58`). Open this folder and look for the `mergef.lef`, `config.tcl`, and `cmds.log` files.
+
+![VirtualBox_vsdworkshop_21_05_2024_00_42_50](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/347a8dc1-e4b8-4890-875e-1857931bfb60)
+
+### Synthesis
+Synthesis is the process of transforming a high-level description of a digital circuit, usually written in a hardware description language (HDL) like Verilog, into a gate-level netlist. This netlist details the circuit using logic gates and their connections.
+
+To perform synthesis in OpenLane, go back to the OpenLane preparation setup and execute the command:
+```
+run_synthesis
+```
+![VirtualBox_vsdworkshop_21_05_2024_00_34_59](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/c572ba7f-d7c1-4a3e-8b2f-bb4b045f0171)
+
+#### synthesis is done
+
+![VirtualBox_vsdworkshop_21_05_2024_00_53_44](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/9f4958b8-9a1a-4b95-b609-1fa08fa5f2cc)
+
+## Day 2
+### Floorplanning
+Floorplanning involves organizing the main functional blocks of an integrated circuit (IC) within the chip's layout area. The goal is to optimize performance, area, power consumption, and other design constraints.
+
+### Aspect Ratio
+The aspect ratio is the proportion of the height to the width of the netlist. 
+
+After completing the synthesis process, initiate the floorplanning process with the following command:
+```
+run_floorplan
+```
+
+![run_floorplan](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/cd9d06c3-8459-44b8-86e6-181b2b7fbdc4)
+
+floorplan process competed and PDN generation was successful-
+
+![PDN gen](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/e1ba7c51-df03-451f-819e-45bd252b20ce)
+
+
+    
+
+
+   
+
+
 
 
 
