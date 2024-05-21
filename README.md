@@ -1,4 +1,4 @@
-# VSDSOC-VSD-SoC-Design
+![ioplannerwhat](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/36a4630f-7b63-4399-8dcb-e0caf533c65c)# VSDSOC-VSD-SoC-Design
 Hello everyone! I recently attended a 5-day workshop on VLSI System-on-Chip (SoC) design, and I'm excited to share what I've learned. The program, organized by NASSCOM and VSD, was led by Kunal Ghosh, a notable figure in the industry.It focused on exploring the ASIC design flow using OpenLane and the Google-SkyWater collaboration's 130nm process design kit (PDK). Throughout the course, we learned how to create standard cells, navigate through the Physical Design domain, and generate GDSII files, which are essential for chip fabrication. This hands-on experience has equipped us with practical skills and knowledge in modern ASIC design techniques.
 ## Table of contents 
  1 Inception of the open-source EDA, OpenLANE,Sky130 PDK.
@@ -135,6 +135,66 @@ run_floorplan
 floorplan process competed and PDN generation was successful-
 
 ![PDN gen](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/e1ba7c51-df03-451f-819e-45bd252b20ce)
+
+open config.tcl file using the command 
+
+      'less config.tcl'
+
+![config tcl](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/de83ab25-4cb5-421f-9b5d-6e37dd64ed4d)
+
+To view the contents of the `floorplan.tcl` file present in the configuration directory using the `less` command, you can use:
+
+```sh
+less floorplan.tcl
+```
+![floorplantcl](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/2f2fd2a8-d84d-47cb-8a17-02a70fa8d18e)
+
+To see floorplann design use 'magic' command as below
+```
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
+```
+![ioplanner](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/8dc9e0d0-a8dd-414c-9e2a-0a4a559ab058) 
+
+ioplacer Designs
+
+![ioplan](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/28c9f44b-5adc-48fc-9113-429921fba781)
+
+![ioplannerwhat](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/091a61d6-fdc5-497b-b6ba-da3cb5b20078)
+
+To view information about a component in logic, place the cursor on the component and press `'s` to select it. Then, in the `tkcon 2.4` main window, enter the cammand 'what'
+
+![floorplan](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/538cecbe-e7ab-4b00-809d-8c1400f212f0)
+
+### Placement
+
+To execute placement, open the OpenLane Preparation Set-Up terminal and enter the command:
+```sh
+run_placement
+```
+![run_placement](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/80cf2270-7032-4d15-8756-db86374c731c)
+
+now run_placement process completed with taking screenshot
+
+![placements_run](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/70b14867-a96c-4a12-9348-19af664b4552)
+
+To see placement design use 'magic' command as below
+```
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &'
+```
+![placement](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/44f0aab8-b37d-473c-9f57-08bc719e8e55)
+
+Magnified images of Magic logic
+
+![placementwhat](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/b79071c5-96f0-44c8-9b52-1de2878cbead)
+
+
+
+
+
+
+
+
+
 
 
     
