@@ -185,7 +185,49 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 
 Magnified images of Magic logic
 
-![placementwhat](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/b79071c5-96f0-44c8-9b52-1de2878cbead)
+![placementwhat](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/b79071c5-96f0-44c8-9b52-1de2878cbead
+
+## Day 3
+Certainly! Here are the commands formatted properly for each terminal:
+
+### In the first terminal:
+
+```sh
+cd Desktop/work/tools/openlane_working_dir/openlane
+git clone https://github.com/example/vsdstdcelldesign.git](https://github.com/nickson-jose/vsdstdcelldesign.git
+cd vsdstdcelldesign
+ls -ltr
+pwd
+```
+
+### In the second terminal:
+
+```sh
+cd Desktop/work/tools/openlane_working_dir/pdks
+cd sky130A/libs.tech/magic/
+ls -ltr
+cp sky130A.tech /home/nickson/Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign/
+clear
+ls -ltr
+magic -T sky130A.tech sky130_inv.mag &
+
+```
+
+![VirtualBox_vsdworkshop_17_05_2024_16_45_33](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/4f11f414-6ad4-41c2-a861-087b9a609fdb)
+
+
+
+![invwhat](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/e52cb7e7-e07a-44a3-9565-574e7722e50c)
+
+
+
+![lefwrite](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/17e00e9f-9a97-4344-8933-281a6f464d32)
+
+
+
+
+ 
+
 
 
 
