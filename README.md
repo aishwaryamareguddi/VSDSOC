@@ -337,7 +337,7 @@ tap_decap_or
 
 
 
-### Timing Analysis using openSTA and  CTS
+### Timing Analysis using openSTA and CTS
 
 ![VirtualBox_vsdworkshop_21_05_2024_19_30_44](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/e5fcd8b6-ed19-4927-942a-2acc5715279e)
 
@@ -351,6 +351,10 @@ tap_decap_or
 
 ![VirtualBox_vsdworkshop_21_05_2024_19_57_28](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/d110b209-2293-4ac0-b0ff-fd953a2d6c74)
 
+* PDN successful
+
+![VirtualBox_vsdworkshop_21_05_2024_19_58_22](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/dc8a5fc1-a077-437e-9abc-df9740671342)
+
 
 ![VirtualBox_vsdworkshop_21_05_2024_19_57_47](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/325cfff4-3f88-42e1-a276-44935a65f4db)
 
@@ -358,11 +362,15 @@ tap_decap_or
 
 ## Day 5
 
+#### Routing and Final layout
+
 ![VirtualBox_vsdworkshop_21_05_2024_19_58_22](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/dbfa948b-be1b-488d-93a5-fac1be7a74d9)
 
 ![VirtualBox_vsdworkshop_21_05_2024_20_10_27](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/0a6e3f23-bcaa-40a7-80e8-364c3bf2f6ff)
 
 ![VirtualBox_vsdworkshop_21_05_2024_20_12_52](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/4144deac-e399-4ccc-8aa9-b7fbdf9bdeac)
+
+
 
 
 
