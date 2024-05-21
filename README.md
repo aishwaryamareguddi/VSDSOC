@@ -1,4 +1,4 @@
-![ioplannerwhat](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/36a4630f-7b63-4399-8dcb-e0caf533c65c)# VSDSOC-VSD-SoC-Design
+# VSDSOC-VSD-SoC-Design
 Hello everyone! I recently attended a 5-day workshop on VLSI System-on-Chip (SoC) design, and I'm excited to share what I've learned. The program, organized by NASSCOM and VSD, was led by Kunal Ghosh, a notable figure in the industry.It focused on exploring the ASIC design flow using OpenLane and the Google-SkyWater collaboration's 130nm process design kit (PDK). Throughout the course, we learned how to create standard cells, navigate through the Physical Design domain, and generate GDSII files, which are essential for chip fabrication. This hands-on experience has equipped us with practical skills and knowledge in modern ASIC design techniques.
 ## Table of contents 
  1 Inception of the open-source EDA, OpenLANE,Sky130 PDK.
