@@ -49,6 +49,7 @@ Hello everyone! I recently attended a 5-day workshop on VLSI System-on-Chip (SoC
   - **Examples**: The Google-SkyWater 130nm PDK is an open-source PDK that provides all necessary resources for designing chips using the 130nm technology node.
  
 ### RTL2GDS Flow
+
   - ![image](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/9f5cd75a-2741-47ae-8ef6-90501ddec7b4)
 
 1. **Synthesis**:
@@ -72,7 +73,9 @@ Hello everyone! I recently attended a 5-day workshop on VLSI System-on-Chip (SoC
 OpenLane is a comprehensive, open-source toolchain designed for the automated design and fabrication of integrated circuits. It streamlines the entire process from RTL (Register Transfer Level) to GDSII (the final file format for chip fabrication), covering all essential steps such as synthesis, floorplanning, placement, routing, and verification. OpenLane supports various foundries and technology nodes, making it versatile for different manufacturing processes. Essentially, it provides a complete, user-friendly workflow for designing chips, simplifying the complex steps involved in creating integrated circuits.
 
 #### openLANE ASIC Design Flow:
+
 ![WhatsApp Image 2024-05-20 at 23 41 07_f923b0ed](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/8c762480-8975-4f6d-a7cc-fc02db927261)
+
 
 ## openLANE preparation process
 #### Open your terminal and enter the following commands:
@@ -84,8 +87,10 @@ OpenLane is a comprehensive, open-source toolchain designed for the automated de
    ```
    flow.tcl -interactive
    ```
+   
 
  ![VirtualBox_vsdworkshop_20_05_2024_12_10_23](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/ce704ffa-db7b-430b-bc36-b3b8d3372472)
+
  
 
 3. Now that the OpenLane tool is launched and ready, the next step is to load the necessary package. This is done by entering the command `package require openlane`.
@@ -114,6 +119,7 @@ run_synthesis
 ```
 ![VirtualBox_vsdworkshop_21_05_2024_00_34_59](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/c572ba7f-d7c1-4a3e-8b2f-bb4b045f0171)
 
+
 #### synthesis is done
 
 ![VirtualBox_vsdworkshop_21_05_2024_00_53_44](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/9f4958b8-9a1a-4b95-b609-1fa08fa5f2cc)
@@ -132,38 +138,51 @@ run_floorplan
 
 ![run_floorplan](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/cd9d06c3-8459-44b8-86e6-181b2b7fbdc4)
 
+
 floorplan process competed and PDN generation was successful-
 
 ![PDN gen](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/e1ba7c51-df03-451f-819e-45bd252b20ce)
 
+
 open config.tcl file using the command 
 
       'less config.tcl'
+      
 
 ![config tcl](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/de83ab25-4cb5-421f-9b5d-6e37dd64ed4d)
+
 
 To view the contents of the `floorplan.tcl` file present in the configuration directory using the `less` command, you can use:
 
 ```sh
 less floorplan.tcl
 ```
+
 ![floorplantcl](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/2f2fd2a8-d84d-47cb-8a17-02a70fa8d18e)
+
 
 To see floorplann design use 'magic' command as below
 ```
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
 ```
+
 ![ioplanner](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/8dc9e0d0-a8dd-414c-9e2a-0a4a559ab058) 
+
 
 ioplacer Designs
 
+
 ![ioplan](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/28c9f44b-5adc-48fc-9113-429921fba781)
+
 
 ![ioplannerwhat](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/091a61d6-fdc5-497b-b6ba-da3cb5b20078)
 
+
 To view information about a component in logic, place the cursor on the component and press `'s` to select it. Then, in the `tkcon 2.4` main window, enter the cammand 'what'
 
+
 ![floorplan](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/538cecbe-e7ab-4b00-809d-8c1400f212f0)
+
 
 ### Placement
 
@@ -213,6 +232,7 @@ magic -T sky130A.tech sky130_inv.mag &
 
 ```
 
+
 ![VirtualBox_vsdworkshop_17_05_2024_16_45_33](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/4f11f414-6ad4-41c2-a861-087b9a609fdb)
 
 
@@ -222,6 +242,130 @@ magic -T sky130A.tech sky130_inv.mag &
 
 
 ![lefwrite](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/17e00e9f-9a97-4344-8933-281a6f464d32)
+
+
+
+#### "Plot the graph with Voltage on the y-axis and time on the x-axis."
+
+use command as below
+```
+plot y vs time a
+```
+
+![grap](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/8fbc134d-bde7-4934-8356-c1357224cc50)
+
+
+#### Rise Time : 
+
+* at 20% of value
+
+  ![rise](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/f37f5022-f0cd-4d58-bf15-8423b1a64f25)
+
+* at 80% of value
+
+  ![rise2](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/7a3fadd5-c244-4bc2-a39e-7f52c3827884)
+
+#### Propagation Time
+
+Propagation time is measured at 50% of value
+
+![propa](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/a8c58752-3f8f-4cd2-aa18-4e8015d22da6) 
+
+
+## Day 4
+
+To continue the process, you need to extract the .lef file from the inverter and incorporate it into the picorv32 design flow. When designing the standard cell, it is crucial to ensure that the input and output ports are placed at the intersections of the vertical and horizontal routing tracks. Additionally, the dimensions of the standard cell should adhere to specific guidelines: the width of the cell must be an odd multiple of the track pitch, and the height must be an odd multiple of the vertical track pitch. These considerations ensure proper alignment and compatibility with the design grid and routing architecture, facilitating seamless integration into the overall design.
+
+open the track.info file
+
+![tracks info](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/0743d08e-3e2f-47c8-9645-b01b4646441b)
+
+
+To convert the grid into tracks, start by opening the tracks file. Then, in the console window, type the command `help grid` for assistance.
+
+![help grid](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/8f7a36bc-a551-4143-ac58-b3fa44233d69)
+
+Track on layout:
+
+![VirtualBox_vsdworkshop_21_05_2024_12_55_24](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/de09c03f-230f-4106-854b-4782a712e844)
+
+#### convertion of magic layout to std cell LEF
+
+![lefwrite](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/ed69183d-5c4d-4cb8-84fb-7a1cc85a440d)
+
+* Next step is to extract the lef file with following command
+  ```
+  lef wriite
+  ```
+  After creating the .lef file, the next step is to integrate it into the picorv32a design. To do this, copy the .lef file into the src folder.
+
+* edit the config.tcl of picorv32a design
+
+  ![5](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/c5a29d7b-1861-4340-a147-406c2d29bd44)
+
+*Done the openLANE flow and run synthesis
+
+![a](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/b3e53d7c-2060-445f-b8a0-25266b13cdc2)
+
+
+![VirtualBox_vsdworkshop_21_05_2024_19_18_37](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/8c9a6712-1efc-4361-ad59-54ef251bd651)
+
+
+![VirtualBox_vsdworkshop_21_05_2024_19_19_08](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/1a7b14a3-1363-4fd0-bf9f-4329bc3a0e3c)
+
+* Execute the floorplan by using the command `run_floorplan`.
+
+If you encounter any errors, run the following commands sequentially.
+```
+init_floorplan
+
+place_io
+
+tap_decap_or
+```
+
+![VirtualBox_vsdworkshop_21_05_2024_19_20_00](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/55d95d8e-7d1f-40e8-b7b0-9084da40c083)
+
+
+![VirtualBox_vsdworkshop_21_05_2024_19_20_15](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/879404fe-596f-4b42-bffa-b9841531753c)
+
+
+![VirtualBox_vsdworkshop_21_05_2024_19_20_33](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/2c7fd703-4b78-43de-a991-fc88e90267c3) 
+
+
+![VirtualBox_vsdworkshop_21_05_2024_19_21_33](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/68348247-33d9-4937-a524-d555022875d5)
+
+
+
+### Timing Analysis using openSTA and  CTS
+
+![VirtualBox_vsdworkshop_21_05_2024_19_30_44](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/e5fcd8b6-ed19-4927-942a-2acc5715279e)
+
+
+![VirtualBox_vsdworkshop_21_05_2024_19_32_03](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/57231451-40a0-4378-bc93-0297c22f56e7)
+
+
+
+![VirtualBox_vsdworkshop_21_05_2024_19_48_44](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/a076ca09-5f04-4bee-9a24-6a3b02dbccfe)
+
+
+![VirtualBox_vsdworkshop_21_05_2024_19_57_28](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/d110b209-2293-4ac0-b0ff-fd953a2d6c74)
+
+
+![VirtualBox_vsdworkshop_21_05_2024_19_57_47](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/325cfff4-3f88-42e1-a276-44935a65f4db)
+
+
+
+## Day 5
+
+![VirtualBox_vsdworkshop_21_05_2024_19_58_22](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/dbfa948b-be1b-488d-93a5-fac1be7a74d9)
+
+![VirtualBox_vsdworkshop_21_05_2024_20_10_27](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/0a6e3f23-bcaa-40a7-80e8-364c3bf2f6ff)
+
+![VirtualBox_vsdworkshop_21_05_2024_20_12_52](https://github.com/aishwaryamareguddi/VSDSOC/assets/169332867/4144deac-e399-4ccc-8aa9-b7fbdf9bdeac)
+
+
+
 
 
 
